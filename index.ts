@@ -61,11 +61,13 @@ countWordOccurrences("TypeScript is great. I love TypeScript!", "typescript");
 type Circle = { shape: "circle"; radius: number };
 type Rectangle = { shape: "rectangle"; width: number; height: number };
 
-function calculateShapeArea(shape: Circle | Rectangle): number | undefined {
+function calculateShapeArea(shape: Circle | Rectangle): number {
   if (shape.shape === "circle") {
     return Math.PI * Math.pow(shape.radius, 2);
   } else if (shape.shape === "rectangle") {
     return shape.width * shape.height;
+  }else{
+    throw new Error("Invalid shape type");
   }
 }
 
